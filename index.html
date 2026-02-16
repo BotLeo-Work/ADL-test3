@@ -1,0 +1,2408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADL Services | Your Strategic Supply Chain Partner</title>
+    <meta name="description"
+        content="ADL Services provides expert procurement, cost optimization, and global sourcing solutions. Your trusted partner in electronics and supply chain management.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0b0e11;
+            --secondary-color: #1a1d23;
+            --accent-color: #ffc107;
+            --text-white: #ffffff;
+            --text-gray: #a0a0a0;
+            --card-bg: #ffffff;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --container-width: 1200px;
+            /* Kept as reference, but max-width handles fluidity */
+            --glow: 0 0 20px rgba(255, 193, 7, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+
+            .custom-cursor,
+            .custom-cursor-ring {
+                display: none;
+            }
+
+            * {
+                cursor: auto;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Global Background Image removed */
+
+        /* Noise Texture */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 9997;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            /* Ensure it takes full width up to max */
+        }
+
+        section {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* Custom Cursor Removed */
+
+
+
+        /* Floating Parallax Images */
+        main {
+            position: relative;
+            /* Context for floating elements */
+            overflow: visible;
+        }
+
+        /* Floating parallax images removed */
+
+        /* Header & Nav */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background: rgba(11, 14, 17, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            /* Kept for consistency if ever reverted, but typically can be removed if unused. */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1;
+        }
+
+        .logo img {
+            height: 50px;
+            /* Adjust based on preference */
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .sub-logo {
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-top: 8px;
+            color: var(--text-gray);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-white);
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-sticky-container {
+            height: auto;
+            position: relative;
+        }
+
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            /* Prevent it from being too short on landscape mobile */
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: transparent;
+            /* overflow: hidden; Removed to prevent potential clipping of fixed video in some browsers */
+            z-index: 10;
+        }
+
+        .hero-video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -5;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        #hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 14, 17, 0.6);
+            /* Dark overlay for better text contrast */
+            /* Optional: Add a subtle gradient */
+            background: linear-gradient(to bottom, rgba(11, 14, 17, 0.4), rgba(11, 14, 17, 0.8));
+            z-index: 1;
+        }
+
+        .hero-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-shape {
+            position: absolute;
+            background: var(--accent-color);
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: drift 20s infinite alternate ease-in-out;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            left: -100px;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            top: 40%;
+            left: 60%;
+            animation-delay: -10s;
+        }
+
+        @keyframes drift {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(50px, 50px) scale(1.1);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .hero-text-wrapper {
+            position: absolute;
+            top: 45%;
+            /* Slightly above 50% to look balanced with the cards at bottom */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 100%;
+            text-align: center;
+            /* Center h1 and p */
+            opacity: 0;
+            animation: titleLanding 2s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+            perspective: 1000px;
+            padding: 0 20px;
+            /* Prevent text touching edges */
+        }
+
+        @keyframes titleLanding {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) rotateY(-360deg) scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotateY(0deg) scale(1);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 72px);
+            /* Mobile-first fluid typography */
+            font-weight: 700;
+            line-height: 1.1;
+            margin: 0 auto 25px auto;
+            color: var(--text-white);
+            text-shadow: 2px 2px 30px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .typing::after {
+            display: none;
+        }
+
+        @keyframes blink {
+
+            from,
+            to {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .text-accent {
+            color: var(--accent-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            /* Fluid text size */
+            color: var(--text-white);
+            margin-bottom: 0;
+            letter-spacing: 3px;
+            font-weight: 300;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        /* 3D Features Carousel */
+        .hero-features-container {
+            position: absolute;
+            bottom: 40px;
+            /* Positioned at the bottom like the image */
+            left: 50%;
+            transform: translateX(-50%) !important;
+            width: 100%;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            /* Enable hover */
+            opacity: 1;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .hero-features.spinning {
+            perspective: 1000px;
+        }
+
+        .feature-box.spinning {
+            animation: boxIntroSpin 2s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+            opacity: 0;
+        }
+
+        @keyframes boxIntroSpin {
+            from {
+                transform: rotateY(720deg) scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: rotateY(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .feature-box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            transition: background 0.3s, box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+            background: linear-gradient(145deg, rgba(30, 34, 40, 0.6), rgba(11, 14, 17, 0.4));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-box:hover {
+            border-color: var(--accent-color);
+            /* Better to just light it up */
+            background: linear-gradient(145deg, rgba(30, 34, 40, 0.9), rgba(11, 14, 17, 0.8));
+            box-shadow: 0 0 30px rgba(255, 193, 7, 0.2), inset 0 0 20px rgba(255, 193, 7, 0.05);
+        }
+
+        /* We need to be careful with transform on hover if it's set by JS/Animation. 
+           The original CSS didn't have transform on hover. 
+           The JS sets the transform. Adding transform here might conflict. 
+           I will remove the transform modification on hover for now to avoid breaking the carousel. */
+
+        .feature-box i {
+            font-size: 40px;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(255, 193, 7, 0.3));
+        }
+
+        .feature-box:hover i {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 20px rgba(255, 193, 7, 0.6));
+        }
+
+        .feature-box span {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--primary-color);
+            position: relative;
+            z-index: 20;
+            color: var(--text-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .subtitle {
+            display: inline-block;
+            color: var(--text-gray);
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .subtitle::after {
+            content: '';
+            position: absolute;
+            right: -60px;
+            top: 50%;
+            width: 50px;
+            height: 1px;
+            background-color: var(--accent-color);
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .services-ticker {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .services-row {
+            display: flex;
+            width: 100%;
+        }
+
+        .services-row-inner {
+            display: flex;
+            gap: 30px;
+            padding: 0 15px;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .service-card {
+            flex: 0 0 65vw;
+            /* 1.5 cards per view */
+            min-width: 500px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 30px 40px;
+            text-align: left;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            white-space: normal;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .services-row {
+            display: flex;
+            width: 100%;
+            overflow-x: hidden;
+            cursor: grab;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .services-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .services-row-inner {
+            display: flex;
+            gap: 30px;
+            padding: 0 15px;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .icon-wrapper {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            background: #000;
+            border: 2px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            transition: var(--transition);
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+        }
+
+        .icon-wrapper i {
+            font-size: 28px;
+            color: var(--accent-color);
+            filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.6));
+        }
+
+        .service-card:hover .icon-wrapper {
+            box-shadow: 0 0 30px rgba(255, 193, 7, 0.5);
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            flex: 0 0 200px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 0;
+            color: var(--text-white);
+            line-height: 1.2;
+        }
+
+        .service-card p {
+            flex: 1;
+            color: var(--text-gray);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--primary-color);
+            position: relative;
+            z-index: 20;
+            color: var(--text-white);
+        }
+
+        .center-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .center-text {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            color: var(--text-gray);
+            font-size: 18px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image-stack {
+            position: relative;
+            height: 500px;
+            width: 100%;
+        }
+
+        .about-img-back {
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 80%;
+            z-index: 1;
+            transform: translateZ(0);
+            /* Hardware accel */
+            opacity: 0.6;
+            /* Slightly fade the back image initially? Or full? User didn't specify. Standard image. */
+            opacity: 1;
+            transition: transform 0.1s linear;
+            /* Only if not using JS loop directly on style, but we will use JS loop. */
+            will-change: transform;
+        }
+
+        .about-img-front {
+            position: absolute;
+            bottom: -50px;
+            /* Overhang */
+            right: 0;
+            width: 65%;
+            z-index: 2;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 12px;
+            will-change: transform;
+            backdrop-filter: blur(5px);
+            /* Maybe transparent bg? No it's an image. */
+        }
+
+        .about-img-back img,
+        .about-img-front img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-image-stack {
+                height: 350px;
+                /* Slightly taller to fit images better */
+                margin-bottom: 30px;
+            }
+
+            .about-img-back {
+                width: 90%;
+                left: 5%;
+                top: 0;
+            }
+
+            .about-img-front {
+                width: 80%;
+                /* Wider on mobile */
+                bottom: 0;
+                /* Align to bottom of stack container */
+                right: 5%;
+                /* Center slightly more */
+            }
+
+            .center-title {
+                font-size: 32px;
+                /* Smaller title on mobile */
+            }
+        }
+
+        .stats-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateX(10px);
+        }
+
+        .stat-icon i {
+            font-size: 36px;
+            color: var(--accent-color);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* Trusted By Section (Ticker) */
+        .brands-ticker {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .ticker-wrapper {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 50px;
+        }
+
+        .ticker-content {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            min-width: 100%;
+            gap: 50px;
+            animation: scroll-ticker 30s linear infinite;
+        }
+
+        @keyframes scroll-ticker {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .brand-item {
+            font-size: 24px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary-color);
+            position: relative;
+            z-index: 20;
+            color: var(--text-white);
+        }
+
+        .map-container {
+            margin-bottom: 60px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .info-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+        }
+
+        .info-icon i {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .contact-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 18px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-family: inherit;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-white);
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-submit {
+            background: var(--accent-color);
+            color: #000;
+            border: none;
+            padding: 18px 45px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            width: auto;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+        }
+
+        .btn-submit:hover {
+            background: #e6ac00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+        }
+
+        /* Footer Styling */
+        .main-footer {
+            background: #0b0e11;
+            padding: 100px 0 0;
+            color: var(--text-white);
+            position: relative;
+            z-index: 20;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        .footer-title {
+            font-size: clamp(40px, 8vw, 80px);
+            /* Fluid footer title */
+            line-height: 0.9;
+            font-weight: 700;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            background: linear-gradient(to bottom, #ffffff 0%, #666666 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.9;
+        }
+
+        .footer-title .text-accent {
+            -webkit-text-fill-color: var(--accent-color);
+            color: var(--accent-color);
+            opacity: 1;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-white);
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 16px;
+            transition: var(--transition);
+            display: inline-block;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer-desc {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            max-width: 300px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .newsletter-form {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0;
+            box-shadow: none;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            background: transparent;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 10px 0;
+            font-size: 16px;
+            color: var(--text-white);
+            font-family: inherit;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .newsletter-form button {
+            background: transparent;
+            color: var(--accent-color);
+            padding: 0 10px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateX(5px);
+        }
+
+        /* Mobile Responsive for Footer */
+        @media (max-width: 991px) {
+            .footer-title {
+                font-size: 48px;
+                margin-bottom: 50px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+
+        .footer-bottom {
+            background: #000;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .legal-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .legal-links a:hover {
+            color: var(--text-white);
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: #fff;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stacked Cards Section */
+        .stacked-section {
+            padding: 40px 0;
+            /* Slightly increased for better spacing */
+            background-color: var(--primary-color);
+            position: relative;
+            z-index: 20;
+            overflow: visible;
+            /* Required for position: sticky to work */
+        }
+
+        /* Reduce spacing between sections */
+        #about {
+            padding-bottom: 20px !important;
+        }
+
+        #contact {
+            padding-top: 0px !important;
+        }
+
+        .stacked-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .stacked-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .stacked-card {
+            position: sticky;
+            height: 500px;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #24221d 0%, #1a1d23 40%, #0d0f13 100%);
+            /* Using solid hex colors to remove transparency and improve readability */
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 193, 7, 0.1);
+            display: flex;
+            transform-origin: center top;
+            will-change: transform;
+            transition: var(--transition);
+        }
+
+        .stacked-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            opacity: 0.8;
+            z-index: 5;
+        }
+
+        .stacked-card:hover {
+            border-color: rgba(255, 193, 7, 0.4);
+            box-shadow: 0 20px 60px rgba(255, 193, 7, 0.08);
+        }
+
+        /* Staggered sticky positions for the stacking effect */
+        .stacked-card:nth-child(1) {
+            top: 120px;
+            z-index: 10;
+        }
+
+        .stacked-card:nth-child(2) {
+            top: 140px;
+            z-index: 11;
+        }
+
+        .stacked-card:nth-child(3) {
+            top: 160px;
+            z-index: 12;
+        }
+
+        .stacked-card:nth-child(4) {
+            top: 180px;
+            z-index: 13;
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .card-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #1a1d23 0%, rgba(26, 29, 35, 0.8) 20%, rgba(36, 34, 29, 0.3) 50%, transparent 100%);
+            /* Smoother multi-stop transition with a hint of golden charcoal for better visibility */
+        }
+
+        .card-details {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-icon {
+            font-size: 40px;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            display: inline-block;
+            background: rgba(255, 193, 7, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--text-white);
+            font-weight: 700;
+        }
+
+        .card-text {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Responsive adjustments for Stacked Cards */
+        @media (max-width: 991px) {
+            .stacked-card {
+                flex-direction: column-reverse;
+                height: auto;
+                min-height: auto;
+                /* Remove fixed height constraint */
+                margin-bottom: 30px;
+                position: sticky;
+                /* Keep sticky but adjust offsets */
+            }
+
+            .card-image {
+                flex: none;
+                height: 250px;
+                /* Reduced height for mobile */
+                width: 100%;
+            }
+
+            .card-content {
+                padding: 30px 20px;
+                /* Reduced padding */
+            }
+
+            .card-title {
+                font-size: 24px;
+            }
+
+            .card-image::after {
+                background: linear-gradient(to top, #1a1d23 0%, rgba(26, 29, 35, 0.8) 30%, transparent 100%);
+            }
+
+            /* Better sticky offsets for mobile header clearance (header is ~70-80px) */
+            .stacked-card:nth-child(1) {
+                top: 90px;
+                z-index: 10;
+            }
+
+            .stacked-card:nth-child(2) {
+                top: 110px;
+                z-index: 11;
+            }
+
+            .stacked-card:nth-child(3) {
+                top: 130px;
+                z-index: 12;
+            }
+
+            .stacked-card:nth-child(4) {
+                top: 150px;
+                z-index: 13;
+            }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 991px) {
+            .hero h1 {
+                font-size: 56px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content-wrapper {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header.scrolled {
+                padding: 10px 0;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                /* Slightly wider for better readability */
+                height: 100vh;
+                background: rgba(11, 14, 17, 0.98);
+                /* Less transparent for legibility */
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+                /* Just below header (1000) but above content */
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
+            }
+
+            .nav-links.mobile-active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                z-index: 1002;
+                color: var(--text-white);
+            }
+
+            /* Mobile touch targets for nav links */
+            .nav-links a {
+                padding: 15px;
+                display: inline-block;
+                font-size: 18px;
+            }
+
+            /* Mobile service card sizing */
+            .service-card {
+                min-width: 280px;
+                max-width: 600px;
+                flex: 0 0 85vw;
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .service-card h3 {
+                flex: none;
+                font-size: 20px;
+            }
+
+            /* Improve Footer Bottom for Mobile */
+            .footer-grid {
+                gap: 40px;
+            }
+
+            .bottom-content {
+                flex-direction: column-reverse;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .legal-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            /* Fluid H1 is handled by clamp() now, but we can ensure safeguards if needed */
+            /* .hero h1 { font-size: 38px; } Removed in favor of global clamp() */
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            /* Mobile Hero Carousel - Horizontal Swipe */
+            .hero-features-container {
+                bottom: 20px;
+                /* Give more space */
+                width: 100%;
+                padding: 0;
+            }
+
+            .hero-features {
+                display: flex;
+                flex-wrap: nowrap;
+                /* Prevent wrapping */
+                overflow-x: auto;
+                /* Enable scrolling */
+                scroll-snap-type: x mandatory;
+                /* Snap effect */
+                justify-content: flex-start;
+                /* Align start for scrolling */
+                width: 100%;
+                padding: 20px 20px 40px 20px;
+                /* Bottom padding for scrollbar/shadow/touch */
+                gap: 15px;
+                -ms-overflow-style: none;
+                /* IE and Edge */
+                scrollbar-width: none;
+                /* Firefox */
+            }
+
+            .hero-features::-webkit-scrollbar {
+                display: none;
+            }
+
+            .feature-box {
+                flex: 0 0 auto;
+                /* Don't shrink */
+                width: 80vw;
+                /* Wide cards for swipe */
+                max-width: 300px;
+                height: 180px;
+                /* Slightly shorter */
+                scroll-snap-align: center;
+                /* Snap to center */
+                margin-right: 0;
+            }
+
+            .contact-form .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+        .contact-parallax-bg {
+            position: absolute;
+            top: -20%;
+            left: 0;
+            width: 100%;
+            height: 140%;
+            background-image: linear-gradient(to bottom, rgba(11, 14, 17, 0.9), rgba(11, 14, 17, 0.8)), url('assets/urban-skyline-dominated-by-tall-buildings.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            will-change: transform;
+            pointer-events: none;
+        }
+
+        .contact-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .contact-title::before,
+        .contact-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            display: inline-block;
+        }
+
+        .services-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .services-title::before,
+        .services-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            display: inline-block;
+        }
+
+        .about-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .about-title::before,
+        .about-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            display: inline-block;
+        }
+
+        .approach-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .approach-title::before,
+        .approach-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Global Background removed -->
+
+
+
+    <header id="header">
+        <nav class="container">
+            <div class="logo">
+                <a href="#">
+                    <img src="assets/logo.png" alt="ADL Services Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Floating Parallax Images removed -->
+
+        <div class="hero-sticky-container">
+            <section id="home" class="hero">
+                <div class="hero-video-container">
+                    <video autoplay loop muted playsinline id="hero-video">
+                        <source src="assets/HeroTestBg.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                <div class="hero-shapes">
+                    <div class="hero-shape shape-1"></div>
+                    <div class="hero-shape shape-2"></div>
+                    <div class="hero-shape shape-3"></div>
+                </div>
+                <div class="container hero-content">
+                    <div class="hero-text-wrapper">
+                        <h1><span class="typing">We are the name of <span class="text-accent">Ease</span><br>in
+                                sourcing.</span>
+                        </h1>
+                        <p>Your strategic supply chain partner</p>
+                    </div>
+
+                    <div class="hero-features-container">
+                        <div class="hero-features" id="hero-carousel">
+                            <div class="feature-box">
+                                <i class="fa-solid fa-truck-moving"></i>
+                                <span>Hybrid Distributor</span>
+                            </div>
+                            <div class="feature-box">
+                                <i class="fa-solid fa-boxes-stacked"></i>
+                                <span>Excess Management</span>
+                            </div>
+                            <div class="feature-box">
+                                <i class="fa-solid fa-box-open"></i>
+                                <span>Procurement</span>
+                            </div>
+                            <div class="feature-box">
+                                <i class="fa-solid fa-globe"></i>
+                                <span>Global Sourcing</span>
+                            </div>
+                            <div class="feature-box">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span>Cost Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="services" class="services section-padding">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="services-title">CHECK OUR SERVICES</h2>
+                </div>
+                <div class="services-ticker">
+                    <!-- Row 1: Scrolls Left -->
+                    <div class="services-row row-left">
+                        <div class="services-row-inner">
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <h3>QC Assurance and Quality Control</h3>
+                                <p>Quality is the cornerstone of our operations, and our rigorous quality control
+                                    journey
+                                    begins with meticulous vendor selection. We implement a comprehensive multi-stage
+                                    inspection
+                                    process including lab testing and visual audits to guarantee that every component
+                                    meets the
+                                    highest industry standards, ensuring maximum reliability for your critical
+                                    mission-sensitive
+                                    applications and production environments.</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                                </div>
+                                <h3>Cost Saving</h3>
+                                <p>ADL Services leverages a vast, trusted global network to compete with the pricing you
+                                    need. We go beyond conventional distribution channels to identify arbitrage
+                                    opportunities
+                                    and strategic volume deals, helping you reduce procurement costs by identifying
+                                    untapped
+                                    market pockets without ever compromising on technical specifications or delivery
+                                    timelines
+                                    required by your team.</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <h3>Global Sourcing</h3>
+                                <p>Our extensive worldwide network acts as a strategic bridge, offering robust solutions
+                                    against global chip shortages and supply chain disruptions. We maintain deep
+                                    relationships
+                                    with manufacturers and authorized distributors across continents, ensuring we can
+                                    source
+                                    hard-to-find components and provide alternative options with validated datasheets
+                                    when
+                                    standard lead times are extended beyond your needs.</p>
+                            </div>
+                            <!-- Duplicates for seamless loop -->
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-microscope"></i>
+                                </div>
+                                <h3>QC Assurance and Quality Control</h3>
+                                <p>Quality is the cornerstone of our operations, and our rigorous quality control
+                                    journey
+                                    begins with meticulous vendor selection. We implement a comprehensive multi-stage
+                                    inspection
+                                    process including lab testing and visual audits to guarantee that every component
+                                    meets the
+                                    highest industry standards, ensuring maximum reliability for your critical
+                                    mission-sensitive
+                                    applications and production environments.</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                                </div>
+                                <h3>Cost Saving</h3>
+                                <p>ADL Services leverages a vast, trusted global network to compete with the pricing you
+                                    need. We go beyond conventional distribution channels to identify arbitrage
+                                    opportunities
+                                    and strategic volume deals, helping you reduce procurement costs by identifying
+                                    untapped
+                                    market pockets without ever compromising on technical specifications or delivery
+                                    timelines
+                                    required by your team.</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <h3>Global Sourcing</h3>
+                                <p>Our extensive worldwide network acts as a strategic bridge, offering robust solutions
+                                    against global chip shortages and supply chain disruptions. We maintain deep
+                                    relationships
+                                    with manufacturers and authorized distributors across continents, ensuring we can
+                                    source
+                                    hard-to-find components and provide alternative options with validated datasheets
+                                    when
+                                    standard lead times are extended beyond your needs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Scrolls Right -->
+                    <div class="services-row row-right">
+                        <div class="services-row-inner">
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-hourglass-end"></i>
+                                </div>
+                                <h3>Obsolescence Management</h3>
+                                <p>In today's volatile and unpredictable technology market, you need specialists who can
+                                    proactively navigate the complex end-of-life cycle. We provide advanced forecasting,
+                                    strategic stockpiling solutions, and life-cycle analysis, helping you mitigate the
+                                    risks
+                                    associated with discontinued components and ensuring your legacy products remain
+                                    viable and
+                                    supportable for years to come without redesigning.</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-boxes-packing"></i>
+                                </div>
+                                <h3>Excess Management</h3>
+                                <p>Don't let capital sit dormant in stagnant inventory. The longer your excess material
+                                    is
+                                    shelved in your warehouse, the higher the risk of depreciation. We offer specialized
+                                    re-marketing programs and global brokerage services to turn your surplus stock back
+                                    into
+                                    working capital through our high-visibility global sales channels and direct OEM
+                                    buyer relationships worldwide.</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <h3>Shortage Management</h3>
+                                <p>Even the most sophisticated purchasing strategy faces acute supply chain challenges.
+                                    When
+                                    shortages threaten your production lines, our rapid-response team activates
+                                    specialized
+                                    sourcing protocols to find stock where others can't. We provide the security,
+                                    technical
+                                    validation, and speed you need to maintain assembly schedules and fulfill critical
+                                    commitments to your customers.</p>
+                            </div>
+                            <!-- Duplicates for seamless loop -->
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-hourglass-end"></i>
+                                </div>
+                                <h3>Obsolescence Management</h3>
+                                <p>In today's volatile and unpredictable technology market, you need specialists who can
+                                    proactively navigate the complex end-of-life cycle. We provide advanced forecasting,
+                                    strategic stockpiling solutions, and life-cycle analysis, helping you mitigate the
+                                    risks
+                                    associated with discontinued components and ensuring your legacy products remain
+                                    viable and
+                                    supportable for years to come without redesigning.</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-boxes-packing"></i>
+                                </div>
+                                <h3>Excess Management</h3>
+                                <p>Don't let capital sit dormant in stagnant inventory. The longer your excess material
+                                    is
+                                    shelved in your warehouse, the higher the risk of depreciation. We offer specialized
+                                    re-marketing programs and global brokerage services to turn your surplus stock back
+                                    into
+                                    working capital through our high-visibility global sales channels and direct OEM
+                                    buyer relationships worldwide.</p>
+                            </div>
+                            <div class="service-card">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <h3>Shortage Management</h3>
+                                <p>Even the most sophisticated purchasing strategy faces acute supply chain challenges.
+                                    When
+                                    shortages threaten your production lines, our rapid-response team activates
+                                    specialized
+                                    sourcing protocols to find stock where others can't. We provide the security,
+                                    technical
+                                    validation, and speed you need to maintain assembly schedules and fulfill critical
+                                    commitments to your customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <div class="about-top reveal">
+                    <h2 class="center-title about-title">About Us</h2>
+                    <p class="center-text">We are a group of young energetic skillful traders in the field of electronic
+                        procurement and sourcing. We have been in business for the past 10 years and our journey till
+                        date has taught us a lot. To know more about us, let's connect...</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-image-stack reveal">
+                        <div class="about-img-back">
+                            <img src="assets/Screenshot 2026-02-14 225428.png" alt="ADL Background">
+                        </div>
+                        <div class="about-img-front">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200"
+                                alt="Our Warehouse">
+                        </div>
+                    </div>
+                    <div class="about-stats reveal">
+                        <h2 class="stats-title">A Glimpse of our successful course in field of trading and sourcing</h2>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="fa-regular fa-face-smile"></i></div>
+                                <div class="stat-info">
+                                    <span class="stat-number" data-target="65">0</span>
+                                    <span class="stat-label">Happy Clients</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                                <div class="stat-info">
+                                    <span class="stat-number" data-target="85">0</span>
+                                    <span class="stat-label">Projects</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="fa-regular fa-clock"></i></div>
+                                <div class="stat-info">
+                                    <span class="stat-number" data-target="10">0</span>
+                                    <span class="stat-label">Years of experience</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+                                <div class="stat-info">
+                                    <span class="stat-number" data-target="3">0</span>
+                                    <span class="stat-label">Awards</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stacked Cards Section -->
+        <section class="stacked-section">
+            <div class="container">
+                <div class="section-header reveal stacked-header">
+                    <h2 class="approach-title">Our Approach & Benefits</h2>
+                </div>
+
+                <div class="stacked-container">
+                    <!-- Card 1 -->
+                    <div class="stacked-card">
+                        <div class="card-content">
+                            <div class="card-details">
+                                <i class="fa-solid fa-handshake card-icon"></i>
+                                <h3 class="card-title">Strategic Procurement</h3>
+                                <p class="card-text">We go beyond simple buying. Our team analyzes global market trends
+                                    to source high-quality components at the best possible rates, leveraging our
+                                    extensive network to your advantage.</p>
+                            </div>
+                        </div>
+                        <div class="card-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000');">
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="stacked-card">
+                        <div class="card-content">
+                            <div class="card-details">
+                                <i class="fa-solid fa-clipboard-check card-icon"></i>
+                                <h3 class="card-title">Uncompromised Quality</h3>
+                                <p class="card-text">Quality is non-negotiable. We implement a rigorous 3-stage
+                                    inspection process, including visual inspection and lab testing, to ensure every
+                                    component meets zero-defect standards.</p>
+                            </div>
+                        </div>
+                        <div class="card-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000');">
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="stacked-card">
+                        <div class="card-content">
+                            <div class="card-details">
+                                <i class="fa-solid fa-plane-departure card-icon"></i>
+                                <h3 class="card-title">Global Logistics</h3>
+                                <p class="card-text">Borders don't limit us. Our seamless logistics management ensures
+                                    timely delivery anywhere in the world, handling all customs and compliance
+                                    requirements so you don't have to.</p>
+                            </div>
+                        </div>
+                        <div class="card-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1000');">
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="stacked-card">
+                        <div class="card-content">
+                            <div class="card-details">
+                                <i class="fa-solid fa-chart-line card-icon"></i>
+                                <h3 class="card-title">Sustainable Growth</h3>
+                                <p class="card-text">We build for the long term. Our partnership model focuses on
+                                    sustainable supply chain practices that scale with your business, ensuring stability
+                                    and growth for years to come.</p>
+                            </div>
+                        </div>
+                        <div class="card-image"
+                            style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000');">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="contact" class="contact section-padding">
+            <div class="contact-parallax-bg"></div>
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 class="contact-title">CONTACT US</h2>
+                </div>
+
+                <div class="map-container reveal">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.1232!2d8.5683!3d50.052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDAzJzA3LjIiTiA4wrAzNCcwNS45IkU!5e0!3m2!1sen!2sde!4v1700000000000!5m2!1sen!2sde"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="info-item reveal">
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-text">
+                                <h3>Location:</h3>
+                                <p>Am Flughafen 12 60549 Frankfurt, Hessen Germany</p>
+                            </div>
+                        </div>
+                        <div class="info-item reveal">
+                            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="info-text">
+                                <h3>Email:</h3>
+                                <p>info@adlservices.eu</p>
+                            </div>
+                        </div>
+                        <div class="info-item reveal">
+                            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="info-text">
+                                <h3>Phone:</h3>
+                                <p>+49 (0) 69 12345678</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form reveal">
+                        <div class="form-row">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Message" rows="5" required></textarea>
+                        <button type="submit" class="btn-submit magnetic">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content-wrapper">
+            <!-- Big Bold Title -->
+            <h2 class="footer-title reveal">LET'S BUILD THE<br><span class="text-accent">FUTURE</span> TOGETHER.</h2>
+
+            <div class="footer-grid reveal">
+                <!-- Col 1: Brand & Social -->
+                <div class="footer-col brand-col">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="assets/logo.png" alt="ADL Services Logo" class="footer-logo">
+                        </a>
+                    </div>
+                    <p class="footer-desc">Your strategic partner for global supply chain optimization and procurement
+                        excellence.</p>
+                    <div class="social-icons-row">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Procurement</a></li>
+                        <li><a href="#">Global Sourcing</a></li>
+                        <li><a href="#">Logistics</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter -->
+                <div class="footer-col newsletter-col">
+                    <h4>Stay Updated</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="magnetic"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                    <p class="contact-detail" style="margin-bottom: 10px; color: var(--text-gray);">Am Flughafen 12,
+                        60549 Frankfurt</p>
+                    <p class="contact-detail" style="color: var(--text-gray);">info@adlservices.eu</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-content">
+                <p>&copy; 2024 ADL Services. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="fa-solid fa-arrow-up"></i></a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            const backToTop = document.querySelector('.back-to-top');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            const navItems = document.querySelectorAll('.nav-links a');
+
+
+            // Hero canvas animation removed
+
+            // Optimized Scroll Logic & Reflow Prevention
+            let ticking = false;
+            const sections = document.querySelectorAll("section");
+            const heroCarousel = document.getElementById('hero-carousel');
+            const aboutImgBack = document.querySelector('.about-img-back');
+            const aboutImgFront = document.querySelector('.about-img-front');
+            const aboutStack = document.querySelector('.about-image-stack');
+            const contactParallax = document.querySelector('.contact-parallax-bg');
+
+            function updateScrollState() {
+                const scrolled = window.scrollY;
+
+                // 2. Header & Back to top
+                if (scrolled > 80) {
+                    header.classList.add('scrolled');
+                    backToTop.classList.add('active');
+                } else {
+                    header.classList.remove('scrolled');
+                    backToTop.classList.remove('active');
+                }
+
+                // Floating parallax and hero BG parallax removed
+
+                // 5. Active Link Update
+                let current = "";
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop;
+                    // Slightly larger offset for better sync
+                    if (scrolled >= sectionTop - 200) {
+                        current = section.getAttribute("id");
+                    }
+                });
+                navItems.forEach((a) => {
+                    a.classList.remove("active");
+                    if (a.getAttribute("href") === `#${current}`) {
+                        a.classList.add("active");
+                    }
+                });
+
+                // 6. 3D Carousel Rotation (Removed as per user request to keep cards static)
+                /* 
+                if (heroCarousel && !heroCarousel.classList.contains('spinning')) {
+                    const rotation = scrolled * 0.2;
+                    heroCarousel.style.transform = `rotateY(${rotation}deg)`;
+
+                    const boxes = heroCarousel.children;
+                    const radius = window.innerWidth > 768 ? 400 : 250;
+
+                    for (let i = 0; i < boxes.length; i++) {
+                        const box = boxes[i];
+                        const angle = i * 72;
+                        box.style.transform = `rotateY(${angle}deg) translateZ(${radius}px) rotateY(${-rotation - angle}deg)`;
+                    }
+                }
+                */
+
+
+
+                // 8. About Image Parallax
+                if (aboutStack && aboutImgBack && aboutImgFront) {
+                    const aboutSection = document.getElementById('about');
+                    if (aboutSection) {
+                        const sectionTop = aboutSection.offsetTop;
+                        const stackTop = sectionTop + aboutStack.offsetTop;
+
+                        if (scrolled + window.innerHeight > stackTop - 100) {
+                            const dist = scrolled - stackTop + window.innerHeight * 0.5;
+                            aboutImgBack.style.transform = `translateY(${dist * 0.12}px)`;
+                            aboutImgFront.style.transform = `translateY(${dist * -0.08}px)`;
+                        }
+                    }
+                }
+
+                // 9. Contact Section Parallax
+                if (contactParallax) {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                        const sectionTop = contactSection.offsetTop;
+                        const sectionHeight = contactSection.offsetHeight;
+
+                        if (scrolled + window.innerHeight > sectionTop && scrolled < sectionTop + sectionHeight + window.innerHeight) {
+                            const dist = scrolled - sectionTop;
+                            contactParallax.style.transform = `translateY(${dist * 0.2}px)`;
+                        }
+                    }
+                }
+
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateScrollState);
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // Hero canvas preloading removed
+
+
+
+            // Header scroll effect
+
+
+            const initCarousel = () => {
+                const heroCarousel = document.getElementById('hero-carousel');
+                if (heroCarousel) {
+                    heroCarousel.classList.add('spinning');
+                    const boxes = heroCarousel.querySelectorAll('.feature-box');
+                    boxes.forEach((box, index) => {
+                        box.style.animationDelay = `${index * 0.1}s`;
+                        box.classList.add('spinning');
+                    });
+                }
+            };
+            initCarousel();
+            window.addEventListener('resize', initCarousel);
+
+            // Mouse-based parallax for hero shapes
+            document.querySelector('.hero').addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+
+                document.querySelectorAll('.hero-shape').forEach((shape, index) => {
+                    const depth = (index + 1) * 20;
+                    const moveX = (mouseX - 0.5) * depth;
+                    const moveY = (mouseY - 0.5) * depth;
+                    shape.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                });
+            });
+
+            // Magnetic Buttons
+            const magneticElements = document.querySelectorAll('.magnetic');
+            magneticElements.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = `translate(0px, 0px)`;
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-active');
+                mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+                mobileMenuBtn.querySelector('i').classList.toggle('fa-xmark');
+                document.body.style.overflow = navLinks.classList.contains('mobile-active') ? 'hidden' : 'auto';
+            });
+
+            // Services Marquee JS Control (with Inertial Smoothing)
+            const serviceRows = document.querySelectorAll('.services-row');
+
+            serviceRows.forEach(row => {
+                const inner = row.querySelector('.services-row-inner');
+                let scrollSpeed = row.classList.contains('row-left') ? 1 : -1;
+                let targetScroll = row.classList.contains('row-left') ? 0 : inner.scrollWidth / 2;
+                let currentScroll = targetScroll;
+                let isPaused = false;
+                const lerpAmount = 0.08; // Smoothing factor (lower = smoother/more inertia)
+
+                // Initialize starting position
+                row.scrollLeft = targetScroll;
+
+                row.addEventListener('mouseenter', () => isPaused = true);
+                row.addEventListener('mouseleave', () => isPaused = false);
+
+                // Handle Mouse Wheel for Horizontal Scroll with Inertia
+                row.addEventListener('wheel', (e) => {
+                    if (isPaused) {
+                        e.preventDefault();
+                        targetScroll += e.deltaY * 1.5; // Slight multiplier for responsiveness
+                    }
+                }, { passive: false });
+
+                function marqueeLoop() {
+                    const halfWidth = inner.scrollWidth / 2;
+
+                    // Increment target if not paused
+                    if (!isPaused) {
+                        targetScroll += scrollSpeed;
+                    }
+
+                    // Linear Interpolation (Lerp) for smoothness
+                    currentScroll += (targetScroll - currentScroll) * lerpAmount;
+
+                    // Apply the smoothed scroll
+                    row.scrollLeft = currentScroll;
+
+                    // Invisible Wrap-around Logic for target and current
+                    // This ensures the numbers don't grow infinitely which can cause jitter
+                    if (targetScroll >= halfWidth) {
+                        targetScroll -= halfWidth;
+                        currentScroll -= halfWidth;
+                    } else if (targetScroll <= 0) {
+                        targetScroll += halfWidth;
+                        currentScroll += halfWidth;
+                    }
+
+                    requestAnimationFrame(marqueeLoop);
+                }
+
+                marqueeLoop();
+            });
+
+            // Close menu when a link is clicked
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-active');
+                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                    mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Stats counter animation
+            const stats = document.querySelectorAll('.stat-number');
+            const statsObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetValue = parseInt(entry.target.getAttribute('data-target'));
+                        let currentValue = 0;
+                        const duration = 2000;
+                        const stepTime = 30;
+                        const totalSteps = duration / stepTime;
+                        const increment = targetValue / totalSteps;
+
+                        const timer = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= targetValue) {
+                                entry.target.innerText = targetValue;
+                                clearInterval(timer);
+                            } else {
+                                entry.target.innerText = Math.ceil(currentValue);
+                            }
+                        }, stepTime);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            stats.forEach(stat => statsObserver.observe(stat));
+
+            // Scroll reveal animation
+            const revealElements = document.querySelectorAll('.reveal, .hero-features-container');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+</body>
+
+</html>
